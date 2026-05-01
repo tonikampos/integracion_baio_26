@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="gl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natureza Viva - Exemplo Despregamento Continuo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- CABECEIRA -->
+    <header class="hero">
+        <nav class="navbar">
+            <div class="logo">🌿 NaturezaViva</div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#datos">Datos</a></li>
+                <li><a href="#galeria">Galería</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Menú">&#9776;</button>
+        </nav>
+
+        <div class="hero-content" id="inicio">
+            <h1 class="hero-title">Descobre a <span class="highlight">Natureza</span></h1>
+            <p class="hero-subtitle">Un exemplo de despregamento continuo con GitHub e Netlify</p>
+            <div class="hero-badges">
+                <span class="badge">HTML5</span>
+                <span class="badge">CSS3</span>
+                <span class="badge">JavaScript</span>
+                <span class="badge badge-netlify">Netlify</span>
+            </div>
+            <a href="#datos" class="btn-primary">Explorar</a>
+        </div>
+
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
+    </header>
+
+    <!-- CONTADOR ANIMADO -->
+    <section class="stats" id="datos">
+        <div class="container">
+            <h2 class="section-title">A Natureza en Números</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">🌳</div>
+                    <div class="stat-number" data-target="3000000000">0</div>
+                    <div class="stat-label">Árbores no Planeta</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🐠</div>
+                    <div class="stat-number" data-target="230000">0</div>
+                    <div class="stat-label">Especies Mariñas</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🦋</div>
+                    <div class="stat-number" data-target="20000">0</div>
+                    <div class="stat-label">Especies de Bolboretas</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🌍</div>
+                    <div class="stat-number" data-target="71">0</div>
+                    <div class="stat-label">% Auga no Planeta</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TARXETAS DE ECOSISTEMAS -->
+    <section class="ecosystems" id="galeria">
+        <div class="container">
+            <h2 class="section-title">Ecosistemas do Mundo</h2>
+            <p class="section-subtitle">Fai clic nunha tarxeta para saber máis</p>
+            <div class="cards-grid">
+                <div class="eco-card" data-info="Os bosques tropicais albergan máis do 50% das especies do planeta nunha área que cobre só o 6% da superficie terrestre.">
+                    <div class="eco-visual bosque"></div>
+                    <h3>🌴 Selva Tropical</h3>
+                    <p>Alta biodiversidade e humidade</p>
+                </div>
+                <div class="eco-card" data-info="Os océanos producen máis do 50% do osíxeno que respiramos e absorben un terzo do CO₂ xerado polos humanos.">
+                    <div class="eco-visual oceano"></div>
+                    <h3>🌊 Océano</h3>
+                    <p>O maior ecosistema da Terra</p>
+                </div>
+                <div class="eco-card" data-info="A tundra ártica é un dos biomas máis fráxiles do planeta, especialmente vulnerable ao cambio climático.">
+                    <div class="eco-visual tundra"></div>
+                    <h3>❄️ Tundra Ártica</h3>
+                    <p>Paisaxes xeadas e únicas</p>
+                </div>
+                <div class="eco-card" data-info="Os desertos cubren preto do 33% da superficie terrestre e teñen ecosistemas sorprendentemente ricos e adaptados.">
+                    <div class="eco-visual deserto"></div>
+                    <h3>🏜️ Deserto</h3>
+                    <p>Adaptación extrema á seca</p>
+                </div>
+                <div class="eco-card" data-info="Os humedais son os ecosistemas máis produtivos do mundo, filtrando a auga e protexendo as costas de inundacións.">
+                    <div class="eco-visual humidal"></div>
+                    <h3>🌾 Humidal</h3>
+                    <p>Filtros naturais da auga</p>
+                </div>
+                <div class="eco-card" data-info="As montañas representan o 24% da superficie terrestre e albergan o 25% da biodiversidade terrestre.">
+                    <div class="eco-visual montana"></div>
+                    <h3>🏔️ Montaña</h3>
+                    <p>Cumes e vales diversos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL INFO ECOSISTEMA -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal">
+            <button class="modal-close" id="modal-close">&times;</button>
+            <div class="modal-icon" id="modal-icon"></div>
+            <p class="modal-text" id="modal-text"></p>
+        </div>
+    </div>
+
+    <!-- XERADOR DE DATOS ALEATORIOS -->
+    <section class="fact-generator">
+        <div class="container">
+            <h2 class="section-title">Curiosidades da Natureza</h2>
+            <div class="fact-box">
+                <div class="fact-text" id="fact-text">Preme o botón para descubrir unha curiosidade!</div>
+                <button class="btn-fact" id="btn-fact">🎲 Nova Curiosidade</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULARIO DE CONTACTO -->
+    <section class="contact" id="contacto">
+        <div class="container">
+            <h2 class="section-title">Contacto</h2>
+            <form class="contact-form" id="contact-form">
+                <div class="form-group">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" placeholder="O teu nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="teu@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="mensaxe">Mensaxe</label>
+                    <textarea id="mensaxe" rows="4" placeholder="Escribe a túa mensaxe..." required></textarea>
+                </div>
+                <button type="submit" class="btn-primary">Enviar Mensaxe</button>
+                <div class="form-message" id="form-message"></div>
+            </form>
+        </div>
+    </section>
+
+    <!-- PIE DE PÁXINA -->
+    <footer class="footer">
+        <div class="container">
+            <p>🌿 NaturezaViva &mdash; Exemplo de Despregamento Continuo</p>
+            <p class="footer-sub">
+                Desenvolvido con HTML, CSS e JS &bull; 
+                <a href="https://github.com/tonikampos/exemplo_despregamento_baio_2026" target="_blank">GitHub</a> &bull;
+                Publicado en <a href="https://netlify.com" target="_blank">Netlify</a>
+            </p>
+            <p class="footer-version" id="footer-version"></p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
